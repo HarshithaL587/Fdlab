@@ -1,0 +1,561 @@
+/* =========================================
+   GLOBAL STYLES
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+    color: #1e293b;
+    min-height: 100vh;
+    padding: 30px 15px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    text-align: center;
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: white;
+    padding: 35px 20px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
+}
+
+.cap {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================================
+   COMMON CARD STYLE
+========================================= */
+
+.card {
+    background: #ffffff;
+    padding: 28px;
+    margin-bottom: 22px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+}
+
+.card h2 {
+    color: #1d4ed8;
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dbeafe;
+}
+
+
+/* =========================================
+   STUDENT DETAILS SECTION
+========================================= */
+
+.student-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================
+   SUBJECT MARKS SECTION
+========================================= */
+
+.info {
+    background: #eff6ff;
+    color: #1e40af;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    font-weight: 500;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+table th {
+    background: #1e40af;
+    color: white;
+    padding: 14px 12px;
+    text-align: center;
+    font-size: 14px;
+}
+
+table th:first-child {
+    text-align: left;
+}
+
+table td {
+    padding: 13px 12px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+table td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: #334155;
+}
+
+table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.external,
+.internal {
+    width: 100px;
+    padding: 9px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 14px;
+    outline: none;
+}
+
+.external:focus,
+.internal:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.total {
+    display: inline-block;
+    min-width: 50px;
+    padding: 7px 10px;
+    background: #dcfce7;
+    color: #166534;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   ATTENDANCE SECTION
+========================================= */
+
+.attendance-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.attendance-box label {
+    font-weight: 600;
+    color: #334155;
+}
+
+.attendance-box input {
+    width: 180px;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 15px;
+    outline: none;
+}
+
+.attendance-box input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.attendance-box span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #475569;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.buttons button {
+    border: none;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    color: white;
+    min-width: 150px;
+}
+
+.generate {
+    background: #2563eb;
+}
+
+.generate:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+.print {
+    background: #059669;
+}
+
+.print:hover {
+    background: #047857;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3);
+}
+
+.reset {
+    background: #dc2626;
+}
+
+.reset:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
+}
+
+
+/* =========================================
+   FINAL REPORT
+========================================= */
+
+.report {
+    margin-top: 30px;
+    border: 2px solid #2563eb;
+}
+
+.report-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.report-header h2 {
+    color: #1e3a8a;
+    border-bottom: none;
+    margin-bottom: 0;
+    font-size: 26px;
+}
+
+.report-student {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    background: #eff6ff;
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.report-student p {
+    font-size: 16px;
+}
+
+.report-student strong {
+    color: #1e40af;
+}
+
+.result-table {
+    min-width: 0;
+    margin-bottom: 25px;
+}
+
+.result-table th {
+    background: #1e3a8a;
+}
+
+.result-table td {
+    text-align: center;
+}
+
+.result-table td:first-child {
+    text-align: left;
+}
+
+
+/* =========================================
+   REPORT SUMMARY
+========================================= */
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.summary > div {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 15px 10px;
+    text-align: center;
+}
+
+.summary strong {
+    display: block;
+    color: #475569;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.summary span {
+    display: block;
+    color: #1e293b;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 15px 10px;
+    }
+
+    header {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    .card {
+        padding: 20px 15px;
+    }
+
+    .student-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .attendance-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .attendance-box input {
+        width: 100%;
+    }
+
+    .attendance-box span {
+        text-align: center;
+    }
+
+    .summary {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .report-student {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .buttons button {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    .card h2 {
+        font-size: 19px;
+    }
+
+    .summary {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   PRINT REPORT
+========================================= */
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+
+    body {
+        background: white;
+        padding: 0;
+        color: black;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    /* Hide input sections and controls */
+    header,
+    .container > .card:not(.report),
+    .buttons,
+    footer {
+        display: none !important;
+    }
+
+    /* Show only the final report */
+    .report {
+        display: block !important;
+        border: 2px solid #000;
+        box-shadow: none;
+        margin: 0;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .report-header h2 {
+        color: black;
+        font-size: 24px;
+    }
+
+    .report-student {
+        background: white;
+        border: 1px solid #000;
+        color: black;
+    }
+
+    .report-student strong {
+        color: black;
+    }
+
+    .result-table {
+        width: 100%;
+        border: 1px solid #000;
+    }
+
+    .result-table th {
+        background: #e5e7eb !important;
+        color: black !important;
+        border: 1px solid #000;
+    }
+
+    .result-table td {
+        border: 1px solid #000;
+    }
+
+    .summary {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .summary > div {
+        border: 1px solid #000;
+        background: white;
+    }
+
+    .summary strong,
+    .summary span {
+        color: black;
+    }
+
+    /* Prevent unnecessary page breaks */
+    .report,
+    .result-table,
+    .summary {
+        page-break-inside: avoid;
+    }
+}
