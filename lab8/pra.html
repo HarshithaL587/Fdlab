@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cartoon Gallery Fetch API</title>
+</head>
+<body>
+<h1>Cartoon Data</h1>
+
+<button onclick="loadData()">load Data</button>
+
+<table border="1" id="cartoons">
+    <tr>
+        <th>Title</th>
+        <th>Image</th>
+        <th>Uploader</th>
+    </tr>
+</table>
+<script>
+
+function loadData(){
+    
+    fetch("https://raw.githubusercontent.com/vegapunk-hub/FD-Lab-Programs/refs/heads/main/Program-8/data.json")
+
+    .then(response=>response.json())
+       
+
+    .then(data=>{
+        data.movies.forEach(movie=>{
+
+            document.getElementById("cartoons").innerHTML +=`
+                <tr>
+                    <td>${movie.title}</td>
+                    <td><img src="${movie.thumbnail}" width="100"></td>
+                    <td>${movie.uploader}</td>
+                </tr>
+            `;
+
+        });
+        ;        
+    })
+
+   .catch(error => {
+        document.getElementById("message").textContent = "X " + error.message;
+    });
+}
+</script>

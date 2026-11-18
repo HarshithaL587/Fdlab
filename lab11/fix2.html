@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Glow Beauty - Online Cosmetics Store</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff0f5;
+            color: #4a2335;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #e75480, #ff91b5);
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 16px;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 3px 8px #e8b6c8;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #c2185b;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            color: #880e4f;
+        }
+
+        /* Search bar */
+        .search-section {
+            text-align: center;
+            padding: 30px 15px 15px;
+        }
+
+        .search-section h2 {
+            margin-bottom: 15px;
+            color: #ad1457;
+        }
+
+        .search-box {
+            width: 90%;
+            max-width: 500px;
+            padding: 13px 18px;
+            border: 2px solid #f48fb1;
+            border-radius: 25px;
+            outline: none;
+            font-size: 16px;
+            background: white;
+        }
+
+        .search-box:focus {
+            border-color: #c2185b;
+        }
+
+        /* Products */
+        .products {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+            padding: 25px 5%;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(194, 24, 91, 0.12);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 22px rgba(194, 24, 91, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            background: #fce4ec;
+        }
+
+        .card h3 {
+            color: #ad1457;
+            margin: 15px 8px 8px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #765363;
+            margin: 8px 10px;
+            line-height: 1.5;
+        }
+
+        .price {
+            color: #c2185b;
+            font-weight: bold;
+            font-size: 19px;
+            margin: 12px 0;
+        }
+
+        /* Buttons */
+        .btn {
+            border: none;
+            padding: 10px 15px;
+            margin: 5px 3px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .order-btn {
+            background: #e75480;
+            color: white;
+        }
+
+        .order-btn:hover {
+            background: #ad1457;
+        }
+
+        .cart-btn {
+            background: white;
+            color: #c2185b;
+            border: 2px solid #e75480;
+        }
+
+        .cart-btn:hover {
+            background: #fce4ec;
+        }
+
+        /* Cart message */
+        #cart-message {
+            text-align: center;
+            color: #ad1457;
+            font-weight: bold;
+            margin: 10px;
+            min-height: 24px;
+        }
+
+        #no-results {
+            text-align: center;
+            padding: 25px;
+            color: #ad1457;
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #ad1457;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Mobile design */
+        @media (max-width: 500px) {
+            header h1 {
+                font-size: 26px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px 8px;
+            }
+
+            .products {
+                padding: 20px;
+                gap: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🌸 Glow Beauty 🌸</h1>
+        <p>Your Beauty, Your Confidence!</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+        <a href="#products">🛒 Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+
+    <section class="search-section" id="home">
+        <h2>Discover Your Beauty ✨</h2>
+        <input
+            type="search"
+            id="search"
+            class="search-box"
+            placeholder="🔍 Search skin care, hair care..."
+            aria-label="Search products"
+        >
+    </section>
+
+    <h2 style="text-align:center; color:#ad1457; margin-top:20px;"
+        id="products">
+        Our Beauty Products
+    </h2>
+
+    <p id="cart-message" role="status" aria-live="polite"></p>
+
+    <div class="products">
+
+        <div class="card" data-name="skin care face cream">
+            <img
+                src="https://placehold.co/400x300/fce4ec/ad1457?text=Skin+Care"
+                alt="Skin care products"
+            >
+            <h3>Skin Care</h3>
+            <p>Keep your skin fresh, soft and glowing.</p>
+            <div class="price">₹499</div>
+            <button class="btn order-btn" onclick="orderNow('Skin Care')">
+                Order Now
+            </button>
+            <button class="btn cart-btn"
+                onclick="addToCart('Skin Care', 499)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="card" data-name="hair care shampoo conditioner">
+            <img
+                src="https://placehold.co/400x300/f8bbd0/880e4f?text=Hair+Care"
+                alt="Hair care products"
+            >
+            <h3>Hair Care</h3>
+            <p>Nourish your hair and make it shine.</p>
+            <div class="price">₹349</div>
+            <button class="btn order-btn" onclick="orderNow('Hair Care')">
+                Order Now
+            </button>
+            <button class="btn cart-btn"
+                onclick="addToCart('Hair Care', 349)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="card" data-name="beauty makeup lipstick cosmetics">
+            <img
+                src="https://placehold.co/400x300/f3d5e5/ad1457?text=Makeup"
+                alt="Makeup and beauty products"
+            >
+            <h3>Beauty Products</h3>
+            <p>Discover makeup for every special occasion.</p>
+            <div class="price">₹599</div>
+            <button class="btn order-btn"
+                onclick="orderNow('Beauty Products')">
+                Order Now
+            </button>
+            <button class="btn cart-btn"
+                onclick="addToCart('Beauty Products', 599)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="card" data-name="perfume fragrance">
+            <img
+                src="https://placehold.co/400x300/fce4ec/c2185b?text=Perfume"
+                alt="Perfume and fragrance"
+            >
+            <h3>Perfumes</h3>
+            <p>Enjoy beautiful fragrances throughout the day.</p>
+            <div class="price">₹799</div>
+            <button class="btn order-btn" onclick="orderNow('Perfumes')">
+                Order Now
+            </button>
+            <button class="btn cart-btn"
+                onclick="addToCart('Perfumes', 799)">
+                Add to Cart
+            </button>
+        </div>
+
+    </div>
+
+    <p id="no-results">Sorry, no matching products found.</p>
+
+    <footer id="contact">
+        <p>© 2026 Glow Beauty | All Rights Reserved</p>
+        <p>Thank you for shopping with us! 💗</p>
+    </footer>
+
+    <script>
+        let cartCount = 0;
+        const cart = [];
+
+        // Search products
+        const searchInput = document.getElementById("search");
+        const productCards = document.querySelectorAll(".card");
+        const noResults = document.getElementById("no-results");
+
+        searchInput.addEventListener("input", function () {
+            const searchText = this.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            productCards.forEach(function (card) {
+                const productName = card.dataset.name.toLowerCase();
+                const productText = card.textContent.toLowerCase();
+
+                const matches =
+                    productName.includes(searchText) ||
+                    productText.includes(searchText);
+
+                card.style.display = matches ? "" : "none";
+
+                if (matches) {
+                    visibleCount++;
+                }
+            });
+
+            noResults.style.display =
+                visibleCount === 0 ? "block" : "none";
+        });
+
+        // Add items to cart
+        function addToCart(name, price) {
+            cart.push({ name: name, price: price });
+            cartCount++;
+
+            document.getElementById("cart-count").textContent = cartCount;
+
+            document.getElementById("cart-message").textContent =
+                name + " added to your cart! Total items: " + cartCount;
+        }
+
+        // Order button
+        function orderNow(name) {
+            document.getElementById("cart-message").textContent =
+                "You selected " + name +
+                ". Checkout and payment are not configured yet.";
+        }
+    </script>
+
+</body>
+</html>
