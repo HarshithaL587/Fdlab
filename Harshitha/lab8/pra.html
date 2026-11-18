@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fetch API</title>
+    </head>
+    <body>
+       <h2>Cartoon Data</h2>
+       <button onclick="loadData()">Load Data</button>
+       
+       <table border="1" id="cartoons">
+            <tr>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Uploader</th>
+            </tr>
+
+            <script>
+                function loadData(){
+                    fetch("https://raw.gitusercontent.com/vegapunk-hub")
+
+                    .then(response => response.json())
+
+                    .then(data => {
+                        data.movies.forEach(movie => {
+                            document.getElementById("csrtoons").innerHTML +=
+                        })
+                    })
+                }
+            </script>
+
+            </script>
+       </table>
+    </body>
+</html>

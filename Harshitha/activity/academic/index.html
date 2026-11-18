@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Academic Report</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="cap">🎓</div>
+        <h1>Student Academic Report</h1>
+        <p>Enter student details and marks to generate the report</p>
+    </header>
+
+    <!-- Student Details -->
+    <section class="card">
+        <h2>Student Details</h2>
+
+        <div class="student-grid">
+
+            <div class="input-group">
+                <label for="studentName">Student Name</label>
+                <input type="text" id="studentName"
+                       placeholder="Enter student name">
+            </div>
+
+            <div class="input-group">
+                <label for="Register">Register Number</label>
+                <input type="text" id="Register"
+                       placeholder="Enter Register Number">
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Subject Marks -->
+    <section class="card">
+
+        <h2>Subject Marks</h2>
+
+        <p class="info">
+            External Maximum: 80 | Internal Maximum: 20
+        </p>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>External / 80</th>
+                        <th>Internal / 20</th>
+                        <th>Total / 100</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Web Programming</td>
+                        <td>
+                            <input type="number" class="external"
+                                   min="0" max="80"
+                                   placeholder="0">
+                        </td>
+                        <td>
+                            <input type="number" class="internal"
+                                   min="0" max="20"
+                                   placeholder="0">
+                        </td>
+                        <td>
+                            <span class="total">0</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Java</td>
+                        <td>
+                            <input type="number" class="external"
+                                   min="0" max="80"
+                                   placeholder="0">
+                        </td>
+                        <td>
+                            <input type="number" class="internal"
+                                   min="0" max="20"
+                                   placeholder="0">
+                        </td>
+                        <td>
+                            <span class="total">0</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>DBMS</td>
+                        <td>
+                            <input type="number" class="external"
+                                   min="0" max="80"
+                                   placeholder="0">
+                        </td>
+                        <td>
+                            <input type="number" class="internal"
+                                   min="0" max="20"
+                                   placeholder="0">
+                        </td>
+                        <td>
+                            <span class="total">0</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Operating System</td>
+                        <td>
+                            <input type="number" class="external"
+                                   min="0" max="80"
+                                   placeholder="0">
+                        </td>
+                        <td>
+                            <input type="number" class="internal"
+                                   min="0" max="20"
+                                   placeholder="0">
+                        </td>
+                        <td>
+                            <span class="total">0</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Software Engineering</td>
+                        <td>
+                            <input type="number" class="external"
+                                   min="0" max="80"
+                                   placeholder="0">
+                        </td>
+                        <td>
+                            <input type="number" class="internal"
+                                   min="0" max="20"
+                                   placeholder="0">
+                        </td>
+                        <td>
+                            <span class="total">0</span>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- Attendance -->
+    <section class="card">
+
+        <h2>Attendance</h2>
+
+        <div class="attendance-box">
+
+            <label for="attendance">
+                Attendance Percentage
+            </label>
+
+            <input type="number"
+                   id="attendance"
+                   min="0"
+                   max="100"
+                   placeholder="Enter attendance %">
+
+            <span>%</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- Buttons -->
+    <div class="buttons">
+
+        <button id="generateBtn" class="generate">
+            Generate Report
+        </button>
+
+        <button id="printBtn" class="print">
+            Print Report
+        </button>
+
+        <button id="resetBtn" class="reset">
+            Reset
+        </button>
+
+    </div>
+
+
+    <!-- Final Report -->
+    <section id="report" class="card report">
+
+        <div class="report-header">
+            <h2>Final Academic Report</h2>
+        </div>
+
+        <div class="report-student">
+
+            <p>
+                <strong>Name:</strong>
+                <span id="displayName">-</span>
+            </p>
+
+            <p>
+                <strong>Register Number:</strong>
+                <span id="displayRegisterNumber">-</span>
+            </p>
+
+        </div>
+
+
+        <table class="result-table">
+
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>External</th>
+                    <th>Internal</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+
+            <tbody id="resultBody">
+            </tbody>
+
+        </table>
+
+
+        <div class="summary">
+
+            <div>
+                <strong>Total Marks</strong>
+                <span id="grandTotal">0 / 500</span>
+            </div>
+
+            <div>
+                <strong>Percentage</strong>
+                <span id="percentage">0%</span>
+            </div>
+
+            <div>
+                <strong>Grade</strong>
+                <span id="grade">-</span>
+            </div>
+
+            <div>
+                <strong>Attendance</strong>
+                <span id="displayAttendance">0%</span>
+            </div>
+
+            <div>
+                <strong>Result</strong>
+                <span id="result">-</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Student Academic Report System</p>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
